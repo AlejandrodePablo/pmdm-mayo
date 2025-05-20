@@ -17,4 +17,7 @@ interface ClientDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveAll(vararg clients: ClientEntity)
+
+    @Query("SELECT COUNT(*) FROM sale WHERE client_dni = :dni")
+    suspend fun countSalesByClient(dni: String): Int
 }
