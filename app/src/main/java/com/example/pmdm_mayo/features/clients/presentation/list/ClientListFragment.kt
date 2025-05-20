@@ -40,9 +40,17 @@ class ClientListFragment : Fragment() {
         //Imagen en la Toolbar
         binding.clientsToolbar.imageToolbar.setImageResource(R.drawable.ic_add)
 
+        //Imagen Toolbar para Sales
+        binding.clientsToolbar.imgToolbarSales.setImageResource(R.drawable.ic_receipt)
+
         // Acción al hacer clic en la imagen de la Toolbar
         binding.clientsToolbar.imageToolbar.setOnClickListener {
             findNavController().navigate(R.id.action_from_client_list_to_add_client)
+        }
+
+        // Acción al hacer clic en la imagen de la Toolbar
+        binding.clientsToolbar.imgToolbarSales.setOnClickListener {
+            findNavController().navigate(R.id.action_from_client_list_to_add_sale)
         }
 
         // RecyclerView y adapter

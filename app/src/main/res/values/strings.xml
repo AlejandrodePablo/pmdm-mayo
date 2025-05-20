@@ -7,4 +7,7 @@
     <string name="email">Email</string>
     <string name="guardar">Guardar</string>
     <string name="volver">Volver</string>
+    <string name="dni_del_cliente">DNI del cliente</string>
+    <string name="concepto">Concepto</string>
+    <string name="total">Total (€)</string>
 </resources>

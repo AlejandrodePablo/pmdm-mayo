@@ -16,7 +16,7 @@
             app:destination="@id/client_form" />
 
         <action
-            android:id="@+id/action_to_addSale"
+            android:id="@+id/action_from_client_list_to_add_sale"
             app:destination="@id/sale_form" />
     </fragment>
 
