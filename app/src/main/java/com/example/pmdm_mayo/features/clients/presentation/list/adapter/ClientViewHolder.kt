@@ -14,6 +14,7 @@ class ClientViewHolder(val view: View): RecyclerView.ViewHolder(view){
             clientDni.text = client.dni
             clientEmail.text = client.email
 
+            vipIcon.visibility = if (client.isVip) View.VISIBLE else View.GONE
             deleteButton.setOnClickListener {
                 onDeleteClick(client.dni)
             }

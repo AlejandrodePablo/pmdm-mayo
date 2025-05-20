@@ -39,9 +39,9 @@ class ClientFormFragment: Fragment() {
             val email = binding.inputEmail.text.toString()
 
             if (dni.isNotBlank() && name.isNotBlank() && email.isNotBlank()) {
-                val client = Client(dni, name, email)
+                val client = Client(dni, name, email,false)
                 viewModel.saveClient(client)
-                findNavController().navigateUp() // volver al listado
+                findNavController().navigateUp()
             }
         }
 
