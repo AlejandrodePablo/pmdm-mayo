@@ -1,7 +1,9 @@
 package com.example.pmdm_mayo.features.clients.data.local.mock
 
 import com.example.pmdm_mayo.features.clients.domain.Client
+import org.koin.core.annotation.Single
 
+@Single
 class ClientMockLocalDataSource {
 
     fun getClients(): List<Client> {

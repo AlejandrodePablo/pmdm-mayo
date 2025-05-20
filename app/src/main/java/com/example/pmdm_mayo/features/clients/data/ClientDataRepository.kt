@@ -4,19 +4,24 @@ import com.example.pmdm_mayo.features.clients.data.local.db.ClientDbLocalDataSou
 import com.example.pmdm_mayo.features.clients.data.local.mock.ClientMockLocalDataSource
 import com.example.pmdm_mayo.features.clients.domain.Client
 import com.example.pmdm_mayo.features.clients.domain.ClientRepository
+import org.koin.core.annotation.Single
 
+@Single
 class ClientDataRepository(
     private val local: ClientDbLocalDataSource,
     private val mock: ClientMockLocalDataSource
 ): ClientRepository{
     override suspend fun getClients(): List<Client> {
         val clients = local.getClients()
-        if (clients.isEmpty()) {
+        return if (clients.isEmpty()) {
             val mockClients = mock.getClients()
             local.saveClients(mockClients)
+            mockClients
+        } else {
+            clients
         }
-        return clients
     }
+
 
     override suspend fun deleteClient(dni: String) {
         local.deleteClient(dni)

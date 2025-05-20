@@ -1,7 +1,9 @@
 package com.example.pmdm_mayo.features.clients.data.local.db
 
 import com.example.pmdm_mayo.features.clients.domain.Client
+import org.koin.core.annotation.Single
 
+@Single
 class ClientDbLocalDataSource(private val dao: ClientDao) {
 
     suspend fun getClients(): List<Client> {
