@@ -2,4 +2,9 @@
     <string name="app_name">pmdm-mayo</string>
     <string name="email_ejemplo_com">email@ejemplo.com</string>
     <string name="dni">DNI</string>
+    <string name="nombre">Nombre</string>
+    <string name="dni_hint">DNI</string>
+    <string name="email">Email</string>
+    <string name="guardar">Guardar</string>
+    <string name="volver">Volver</string>
 </resources>

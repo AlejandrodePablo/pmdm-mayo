@@ -11,6 +11,8 @@
         android:minHeight="?attr/actionBarSize"
         app:titleCentered="true">
         <ImageView
+            android:id="@+id/image_toolbar"
+            android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"/>

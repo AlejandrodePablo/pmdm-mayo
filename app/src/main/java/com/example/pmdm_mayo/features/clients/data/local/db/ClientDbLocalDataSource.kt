@@ -21,4 +21,8 @@ class ClientDbLocalDataSource(private val dao: ClientDao) {
     suspend fun saveClients(clients: List<Client>) {
         dao.saveAll(*clients.map { it.toEntity() }.toTypedArray())
     }
+    suspend fun saveClient(client: Client) {
+        dao.saveAll(client.toEntity())
+    }
+
 }

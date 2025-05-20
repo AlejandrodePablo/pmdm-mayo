@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_client_list">
 
         <action
-            android:id="@+id/action_to_addClient"
+            android:id="@+id/action_from_client_list_to_add_client"
             app:destination="@id/client_form" />
 
         <action

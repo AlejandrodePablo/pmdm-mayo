@@ -1,4 +1,4 @@
-package com.example.pmdm_mayo.features.clients.presentation.list
+package com.example.pmdm_mayo.features.clients.presentation
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,14 +7,16 @@ import androidx.lifecycle.viewModelScope
 import com.example.pmdm_mayo.features.clients.domain.Client
 import com.example.pmdm_mayo.features.clients.domain.DeleteClientUseCase
 import com.example.pmdm_mayo.features.clients.domain.GetClientsUseCase
+import com.example.pmdm_mayo.features.clients.domain.SaveClientUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.android.annotation.KoinViewModel
 
 @KoinViewModel
-class ClientsListViewModel(
+class ClientsViewModel(
     private val getClients: GetClientsUseCase,
-    private val deleteClient: DeleteClientUseCase
+    private val deleteClient: DeleteClientUseCase,
+    private val saveClientUseCase: SaveClientUseCase
 ) : ViewModel() {
 
     private val _uiState = MutableLiveData<UiState>()
@@ -39,6 +41,13 @@ class ClientsListViewModel(
             fetchClients()
         }
     }
+
+    fun saveClient(client: Client) {
+        viewModelScope.launch(Dispatchers.IO) {
+            saveClientUseCase(client)
+        }
+    }
+
 
     data class UiState(
         val isLoading: Boolean = false,
