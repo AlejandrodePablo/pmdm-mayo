@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <!-- Nombre del cliente -->
+    <TextView
+        android:id="@+id/client_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textStyle="bold"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/delete_button"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- DNI -->
+    <TextView
+        android:id="@+id/client_dni"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/dni"
+        app:layout_constraintTop_toBottomOf="@id/client_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/delete_button"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Email -->
+    <TextView
+        android:id="@+id/client_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/email_ejemplo_com"
+        app:layout_constraintTop_toBottomOf="@id/client_dni"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/delete_button"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <!-- Botón eliminar -->
+    <ImageView
+        android:id="@+id/delete_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
